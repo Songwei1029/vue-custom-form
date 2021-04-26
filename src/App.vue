@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <Form />
+    <SwMsgbox />
   </div>
 </template>
 
 <script>
 import Form from './components/form/index.vue'
+import SwMsgbox from './components/messageBox/index';
 
 export default {
   name: 'App',
   components: {
-    Form
+    Form,
+    SwMsgbox
   }
 }
 </script>

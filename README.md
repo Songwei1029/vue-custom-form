@@ -10,7 +10,7 @@ npm install
 npm run serve
 ```
 
-## 用法示例：
+## form用法示例：
 ```
 <SwForm :model='userInfo' :rules="rules" ref='swform'>
   <SwFormItem label="用户名：" prop='acc'>
@@ -52,5 +52,19 @@ data() {
       },
     };
   },
+```
+
+
+
+## 弹框用法示例
+
+```
+import SwMsgbox from "@/components/messageBox/SwMsgBox";
+
+this.$swCreateBox(SwMsgbox, {
+    title: "pyy",
+    content: "成功！",
+    duration: 3000,
+}).show();
 ```
 
