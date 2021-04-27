@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import SwMsgbox from "@/components/messageBox/SwMsgBox";
 
 function swExtendBox(Component, props) {
     // 利用vue的extend()方法来得到组件的构造函数
@@ -17,4 +18,11 @@ function swExtendBox(Component, props) {
     return mycomponent;
 }
 
-export default swExtendBox;
+// 使⽤插件进⼀步封装便于使⽤
+export default {
+    install(Vue) {
+        Vue.prototype.$swExtendBox = function (options) {
+            return swExtendBox(SwMsgbox, options);
+        }
+    }
+}

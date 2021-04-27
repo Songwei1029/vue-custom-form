@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import SwMsgbox from "@/components/messageBox/SwMsgBox";
 
 // 创建一个函数，动态生成组件实例挂载到body上
 // Component:是组件配置对象
@@ -24,4 +25,11 @@ function swCreateBox(Component, props) {
     return mycomponent;
 }
 
-export default swCreateBox;
+// 使⽤插件进⼀步封装便于使⽤
+export default {
+    install(Vue) {
+        Vue.prototype.$swCreateBox = function (options) {
+            return swCreateBox(SwMsgbox, options);
+        }
+    }
+}

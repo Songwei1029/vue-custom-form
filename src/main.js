@@ -5,8 +5,10 @@ import swExtendBox from '@/utils/swExtendBox.js'
 
 Vue.config.productionTip = false
 
-Vue.prototype.$swCreateBox = swCreateBox;
-Vue.prototype.$swExtendBox = swExtendBox;
+Vue.use(swCreateBox);
+Vue.use(swExtendBox);
+// Vue.prototype.$swCreateBox = swCreateBox;
+// Vue.prototype.$swExtendBox = swExtendBox;
 
 // new Vue结果是根实例 -> $root
 // App是根组件
